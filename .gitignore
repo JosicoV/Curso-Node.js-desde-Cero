@@ -1,0 +1,8 @@
+# Ignorar archivos sensibles y dependencias del proyecto final (semana 2)
+2nd WEEK - Express.js + MongoDB project/Express.js + EJS + MongoDB - full project/.env
+2nd WEEK - Express.js + MongoDB project/Express.js + EJS + MongoDB - full project/uploads/
+2nd WEEK - Express.js + MongoDB project/Express.js + EJS + MongoDB - full project/node_modules/
+
+# Archivos del sistema (por si acaso)
+.DS_Store
+Thumbs.db

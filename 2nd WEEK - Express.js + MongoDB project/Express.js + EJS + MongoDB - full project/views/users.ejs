@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <a href="/">Inicio</a>
+
+    <h1>Listado de Usuarios</h1>
+
+    <!--
+    <input type="text" id="busqueda" placeholder="Buscar por nombre o email">
+    -->    
+
+    <% if (users.length === 0) { %>
+        <p>No hay usuarios registrados.</p>
+    <% } else { %>
+        <!-- Exportar CSV -->
+        <form action="/exportar-csv" method="get">
+            <button type="submit">Exportar a CSV</button>
+        </form>
+        
+        <!-- Filtro + Orden -->
+        <form method="get" action="/usuarios">
+            <input tipe="text" name="q" placeholder="Buscar" value="<%= q %>">
+            <select name="orden">
+                <option value="asc" <%= orden === 'asc' ? 'selected' : '' %> >A-Z</option>
+                <option value="desc" <%= orden === 'desc' ? 'selected' : '' %> >Z-A</option>
+            </select>
+            <button type="submit">Buscar</button>
+        </form>
+        <ul id="users-list">
+            <% users.forEach(user => { %>
+                <li>
+                    <strong>Nombre: </strong><a href="/usuarios/<%= encodeURIComponent(user.email) %>"><%= user.nombre %></a> - <strong>Email: </strong><%= user.email %>
+                    <br>
+                    <% if (user.foto) { %>
+                        <img src="/fotos/<%= user.foto %>" alt="Foto del perfil">
+                    <% } %>
+                    <br>
+                    <% if (user.curriculum) { %>
+                        <a href="/curriculums/<%= user.curriculum %>" target="_blank">Descargar Curriculum</a>
+                    <% } %>
+
+                    <form action="/eliminar" method="post">
+                        <input type="hidden" name="email" value="<%= user.email %>">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </li>
+                <hr>
+            <% }); %>
+        </ul>
+    <% } %>
+    <div style="margin-top: 1rem;">
+        <% for (let i = 1; i <= totalPages; i++) { %>
+            <% const query = `?page=${i}&orden=${orden}&q=${encodeURIComponent(q)}`; %>
+            <% if (i === page) { %>
+                <strong>[<%= i %>]</strong>
+            <% } else { %>
+                <a href="/usuarios<%= query %>">[<%= i %>]</a>
+            <% } %>
+        <% } %>
+    </div>
+    <!--
+    <script src="/js/busqueda.js"></script>
+    -->
+</body>
+</html>

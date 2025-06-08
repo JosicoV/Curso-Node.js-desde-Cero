@@ -1,0 +1,20 @@
+[
+  {
+    "nombre": "Josico Vila",
+    "email": "josico@ejemplo.com",
+    "foto": "1749345602477-35625960.png",
+    "curriculum": "1749345602482-870642559.pdf"
+  },
+  {
+    "nombre": "Emilio Vila",
+    "email": "emilio@ejemplo.com",
+    "foto": "1749345777546-393579716.png",
+    "curriculum": "1749345777551-175136577.pdf"
+  },
+  {
+    "nombre": "María Vila",
+    "email": "maria@ejemplo.com",
+    "foto": "1749345807412-804348991.png",
+    "curriculum": "1749345807417-985603819.pdf"
+  }
+]

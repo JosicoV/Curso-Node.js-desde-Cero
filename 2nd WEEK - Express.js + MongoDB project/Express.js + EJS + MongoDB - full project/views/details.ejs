@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de <%= usuario.nombre %></title>
+</head>
+<body>
+    <h1><%= usuario.nombre %></h1>
+    <strong>Email: </strong><%= usuario.email %>
+    
+    <% if ( usuario.foto ) { %>
+        <p><strong>Foto: </strong><br>
+            <img src="/fotos/<%= usuario.foto %>" alt="Foto de perfil" width="150">
+        </p>
+    <% } %>
+
+    <% if ( usuario.curriculum ) { %>
+        <p><a href="/curriculums/<%= usuario.curriculum %>" target="_blank">Ver Currículum</a></p>
+     <% } %>
+
+     <p><a href="/usuarios" target="_blank">Volver a la lista de usuarios</p>
+</body>
+</html>

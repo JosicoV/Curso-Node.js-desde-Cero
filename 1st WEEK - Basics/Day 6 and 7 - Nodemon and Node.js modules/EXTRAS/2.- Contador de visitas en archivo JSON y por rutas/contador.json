@@ -1,0 +1,23 @@
+{
+  "/": {
+    "visitas": 5,
+    "ultimaVisita": "2025-06-06T22:01:21.394Z",
+    "ips": [
+      "::1"
+    ]
+  },
+  "/josico": {
+    "visitas": 2,
+    "ultimaVisita": "2025-06-06T22:01:39.395Z",
+    "ips": [
+      "::1"
+    ]
+  },
+  "/stats": {
+    "visitas": 1,
+    "ultimaVisita": "2025-06-06T22:02:00.960Z",
+    "ips": [
+      "::1"
+    ]
+  }
+}

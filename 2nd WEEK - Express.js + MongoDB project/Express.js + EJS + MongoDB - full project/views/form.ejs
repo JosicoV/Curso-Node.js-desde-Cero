@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Usuario</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Agregar Nuevo Usuario</h1>
+
+    <form action="/usuarios" method="POST" enctype="multipart/form-data">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="foto">Foto:</label>
+        <input type="file" id="foto" name="foto" accept="image/*" required><br><br>
+
+        <label for="pdf">Curriculum PDF:</label>
+        <input type="file" id="pdf" name="curriculum" accept="application/pdf" required><br><br>
+
+        <button type="submit">Guardar</button>
+    </form>
+
+    <p><a href="/">Volver</a></p>
+    <p><a href="/usuarios">Ver Usuarios</a></p>
+    <script>
+        // Tratamiento de errores de entrada
+        document.querySelector('form').addEventListener('submit', function(event) {
+            const nombre = document.querySelector('[name="nombre"]').value.trim();
+            const email = document.querySelector('[name="email"]').value.trim();
+            const foto = document.querySelector('[name="foto"]').files[0];
+            const curriculum = document.querySelector('[name="curriculum"]').files[0];
+
+            let errores = [];
+
+            if (nombre.length < 3) {
+                errores.push('El nombre debe tener al menos 3 caracteres.');
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                errores.push('El email no es válido.');
+            }
+            if (!foto || !foto.type.startsWith('image/')) {
+                errores.push('Debes subir una foto.');
+            }
+            if (!curriculum || !curriculum.type.startsWith('application/pdf')) {
+                errores.push('Debes subir un curriculum en formato PDF.');
+            }
+
+            if (errores.length > 0) {
+                event.preventDefault();
+                alert(errores.join('\n'));
+            }
+            
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+{
+    "saludo": "Hola, desde el servidor creado con Express.js",
+    "autor": "José Vila",
+    "fecha": "2025-06-06T00:00:00.000Z"
+}
