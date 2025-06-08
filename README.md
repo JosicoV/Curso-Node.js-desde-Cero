@@ -11,6 +11,7 @@ El repositorio está organizado en carpetas, cada una correspondiendo una semana
 *   **/1st WEEK - Basics**: Conceptos básicos de Node.js.
 *   **/2nd WEEK - Express.js + MongoDb project**: Mini Proyecto con Express.js + EJS + MongoDB.
 *   ... (iré añadiendo el resto de carpetas del curso tal y como vaya avanzando)
+*   **/otherDocs**: Carpeta donde pondré los resumenes de teoría y ejercicios del curso en formato PDF.
 
 Cada carpeta contiene sus propios ejemplos y un archivo `README.md` con detalles específicos de ese módulo.
 
