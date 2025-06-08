@@ -22,7 +22,7 @@ Cada carpeta contiene sus propios ejemplos y un archivo `README.md` con detalles
 
 ## ¿Cómo Empezar?
 
-1.  Clona este repositorio: `git clone https://github.com/tu-usuario/tu-repositorio.git`
+1.  Clona este repositorio: `git clone https://github.com/JosicoV/Curso-Node.js-desde-Cero.git`
 2.  Navega a la carpeta del módulo que te interese: `cd nombre-de-la-carpeta`
 3.  Sigue las instrucciones del `README.md` específico de esa carpeta para ejecutar los ejemplos.
 
